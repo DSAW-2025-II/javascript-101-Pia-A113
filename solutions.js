@@ -1,6 +1,6 @@
 // Sum of Two Numbers
 function sum(a, b) {
-  if (typeof a !== 'number' || typeof a !== 'number') {
+  if (typeof a !== 'number' || typeof b !== 'number') {
     console.log("Los datos de entrada no son validas")
     return;
   }
@@ -28,8 +28,8 @@ function findLargest(arr) {
     console.log("Los datos de entrada no son validas")
     return;
   }
-    }
   return Math.max(...arr);
+}
 
 // Count Vowels in a String
 function countVowels(str) {
@@ -50,7 +50,7 @@ function countVowels(str) {
 
 // Check if a Number is Prime
 function isPrime(n) {
-  if(typeof n !== 'number' || Number.isInteger(n) || n < 2) {
+  if(typeof n !== 'number' || !Number.isInteger(n) || n < 2) {
     console.log("Los datos de entrada no son validas");
     return;
   }
