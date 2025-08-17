@@ -1,10 +1,18 @@
 // Sum of Two Numbers
 function sum(a, b) {
+  if (typeof a !== 'number' || typeof a !== 'number') {
+    console.log("Los datos de entrada no son validas")
+    return;
+  }
   return a + b;
 }
 
 // Factorial of a Number
 function factorial(n) {
+  if (typeof n !== 'number') {
+    console.log("Los datos de entrada no es valida")
+    return;
+  }
   if (n < 0) return undefined;
   if (n === 0) return 1;
   let result = 1;
@@ -16,18 +24,19 @@ function factorial(n) {
 
 // Find the Largest Number
 function findLargest(arr) {
-  if (!arr || arr.length === 0) return undefined;
-  let largest = arr[0];
-  for (let i = 1; i < arr.length; i++) {
-    if (arr[i] > largest) {
-      largest = arr[i];
-    }
+  if (!Array.isArray(arr) || arr.some(item => typeof item !== 'number')) {
+    console.log("Los datos de entrada no son validas")
+    return;
   }
-  return largest;
-}
+    }
+  return Math.max(...arr);
 
 // Count Vowels in a String
 function countVowels(str) {
+  if (typeof str !== 'string') {
+    console.log("Los datos de entrada no son adecuados");
+    return;
+  }
   const vowels = "aeiouAEIOU";
   let count = 0;
   for (let char of str) {
@@ -35,10 +44,16 @@ function countVowels(str) {
       count++;
     }
   }
+  return count;
 }
+ 
 
 // Check if a Number is Prime
 function isPrime(n) {
+  if(typeof n !== 'number' || Number.isInteger(n) || n < 2) {
+    console.log("Los datos de entrada no son validas");
+    return;
+  }
   if (n <= 1) return false;
   for (let i = 2; i <= Math.sqrt(n); i++) {
     if (n % i === 0) return false;
@@ -52,4 +67,4 @@ module.exports = {
   findLargest,
   countVowels,
   isPrime,
-};
+} ;
